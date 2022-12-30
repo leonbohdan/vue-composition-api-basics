@@ -23,20 +23,28 @@
 </template>
 
 <script setup>
+/*
+ imports
+ */
 import {
   reactive,
   computed,
   watch,
-  onBeforeMount,
   onMounted,
-  onBeforeUnmount,
-  onUnmounted,
-  onActivated,
-  onDeactivated, onBeforeUpdate, onUpdated,
 } from 'vue';
 
+/*
+appTitle
+ */
 const appTitle = 'My Amazing counter app';
 
+onMounted(() => {
+  console.log('Do staff related to App Title');
+});
+
+/*
+counter
+ */
 const counterData = reactive({
   count: 0,
   title: 'My counter',
@@ -60,36 +68,8 @@ const decreaseCounter = (amount) => {
   counterData.count -= amount;
 };
 
-onBeforeUpdate(() => {
-  console.log('onBeforeUpdate');
-});
-
-onUpdated(() => {
-  console.log('onUpdated');
-});
-
-onBeforeMount(() => {
-  console.log('onBeforeMount');
-});
-
 onMounted(() => {
-  console.log('onMounted');
-});
-
-onBeforeUnmount(() => {
-  console.log('onBeforeUnmount');
-});
-
-onUnmounted(() => {
-  console.log('onUnmounted');
-});
-
-onActivated(() => {
-  console.log('onActivated');
-});
-
-onDeactivated(() => {
-  console.log('onDeactivated');
+  console.log('Do staff related to Counter');
 });
 </script>
 
