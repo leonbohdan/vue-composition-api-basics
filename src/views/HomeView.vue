@@ -17,7 +17,7 @@
 
     <div class="edit">
       <h4>Edit counter title:</h4>
-      <input v-model="counterData.title" type="text">
+      <input v-model="counterData.title" v-Autofocus type="text">
     </div>
   </div>
 </template>
@@ -32,6 +32,7 @@ import {
   watch,
   onMounted,
 } from 'vue';
+import { vAutofocus } from '@/directives/vAutofocus';
 
 /*
 appTitle
@@ -71,6 +72,15 @@ const decreaseCounter = (amount) => {
 onMounted(() => {
   console.log('Do staff related to Counter');
 });
+
+/*
+directives
+ */
+// const vAutofocus = {
+//   mounted: (el) => {
+//     el.focus();
+//   },
+// };
 </script>
 
 <style>
