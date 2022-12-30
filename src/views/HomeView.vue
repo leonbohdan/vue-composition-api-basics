@@ -1,73 +1,43 @@
 <template>
   <div class="home">
+    <h2>{{ appTitle }}</h2>
+    <h3>{{ counterData.title }}:</h3>
+
     <div>
       <button class="btn" @click="decreaseCounter">-</button>
-
-      <span class="counter">{{ counter }}</span>
-
+      <span class="counter">{{ counterData.count }}</span>
       <button class="btn" @click="increaseCounter">+</button>
+    </div>
+
+    <div class="edit">
+      <h4>Edit counter title:</h4>
+      <input v-model="counterData.title" type="text">
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { reactive } from 'vue';
 
-const counter = ref(0);
+const appTitle = 'My Amazing counter app';
+
+// const counter = ref(0),
+//   title = ref('My counter');
+
+const counterData = reactive({
+  count: 0,
+  title: 'My counter',
+});
 
 const increaseCounter = () => {
-  counter.value++;
+  counterData.count++;
 };
 
 const decreaseCounter = () => {
-  counter.value--;
+  counterData.count--;
 };
 
 </script>
-
-<!--<script>-->
-<!--import { ref } from 'vue';-->
-
-<!--export default {-->
-<!--  setup() {-->
-<!--    const counter = ref(0);-->
-
-<!--    const increaseCounter = () => {-->
-<!--      counter.value++;-->
-<!--    };-->
-
-<!--    const decreaseCounter = () => {-->
-<!--      counter.value&#45;&#45;;-->
-<!--    };-->
-
-<!--    return {-->
-<!--      counter,-->
-<!--      increaseCounter,-->
-<!--      decreaseCounter,-->
-<!--    };-->
-<!--  },-->
-<!--};-->
-<!--</script>-->
-
-<!--<script>-->
-<!--export default {-->
-<!--  data() {-->
-<!--    return {-->
-<!--      counter: 0,-->
-<!--    }-->
-<!--  },-->
-
-<!--  methods: {-->
-<!--    increaseCounter() {-->
-<!--      this.counter++;-->
-<!--    },-->
-
-<!--    decreaseCounter() {-->
-<!--      this.counter&#45;&#45;;-->
-<!--    }-->
-<!--  },-->
-<!--}-->
-<!--</script>-->
 
 <style>
 .home {
@@ -78,6 +48,10 @@ const decreaseCounter = () => {
 .btn, .counter {
   font-size: 40px;
   margin: 10px;
+}
+
+.edit {
+  margin-top: 60px;
 }
 </style>
 
