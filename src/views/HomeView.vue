@@ -17,7 +17,7 @@
 
     <div class="edit">
       <h4>Edit counter title:</h4>
-      <input v-model="counterData.title" v-Autofocus type="text">
+      <input v-model="counterData.title" v-autofocus type="text">
     </div>
   </div>
 </template>
