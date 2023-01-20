@@ -32,7 +32,7 @@ const posts = ref([
 ]);
 </script>
 
-<style>
+<style scoped>
 ul {
   margin-bottom: 30px;
 }

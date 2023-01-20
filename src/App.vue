@@ -1,9 +1,11 @@
 <template>
   <nav>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/posts">Posts</RouterLink>
+    <router-link to="/">Home</router-link>
+    <router-link to="/modals">Modals</router-link>
+    <router-link to="/posts">Posts</router-link>
   </nav>
-  <RouterView />
+
+  <router-view />
 </template>
 
 <style scoped>
