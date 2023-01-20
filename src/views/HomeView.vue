@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <h2>{{ appTitle }}</h2>
+    <h2 ref="appTitleRef">{{ appTitle }}</h2>
+
     <h3>{{ counterData.title }}:</h3>
 
     <div>
@@ -27,6 +28,7 @@
  imports
  */
 import {
+  ref,
   reactive,
   computed,
   watch,
@@ -39,8 +41,10 @@ appTitle
  */
 const appTitle = 'My Amazing counter app';
 
+const appTitleRef = ref(null);
+
 onMounted(() => {
-  console.log('Do staff related to App Title');
+  console.log('appTitleRef.value', appTitleRef.value.offsetWidth);
 });
 
 /*
