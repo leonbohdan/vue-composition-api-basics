@@ -4,11 +4,10 @@
 
     <button @click="showModal = true">Show modal</button>
 
-    <modal v-if="showModal">
-      <template #title>
-        This is modal
-      </template>
-
+    <modal
+      v-if="showModal"
+      title="This is modal"
+    >
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut commodi illo labore, reiciendis sit temporibus! Animi aperiam consequuntur dolores earum quasi repudiandae sequi, suscipit voluptatem! Assumenda labore nisi sit!</p>
     </modal>
   </div>
