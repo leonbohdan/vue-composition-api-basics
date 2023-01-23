@@ -5,7 +5,7 @@
     <button @click="showModal = true">Show modal</button>
 
     <modal
-      v-if="showModal"
+      v-model="showModal"
       title="This is modal"
       @hide-modal="showModal = false"
     >
