@@ -5,7 +5,7 @@
 
       <slot />
 
-      <button>Hide modal</button>
+      <button @click="handleButtonClick">Hide modal</button>
     </div>
   </teleport>
 </template>
@@ -18,6 +18,11 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits(['hide-modal']);
+
+const handleButtonClick = () => {
+  emit('hide-modal');
+};
 </script>
 
 <style>

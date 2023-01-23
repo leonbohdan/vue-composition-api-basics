@@ -7,6 +7,7 @@
     <modal
       v-if="showModal"
       title="This is modal"
+      @hide-modal="showModal = false"
     >
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut commodi illo labore, reiciendis sit temporibus! Animi aperiam consequuntur dolores earum quasi repudiandae sequi, suscipit voluptatem! Assumenda labore nisi sit!</p>
     </modal>
