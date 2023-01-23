@@ -1,9 +1,11 @@
 <template>
   <teleport to=".modals-container">
     <div class="modal">
-      <h1>This is modal</h1>
+      <h1>
+        <slot name="title"/>
+      </h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut commodi illo labore, reiciendis sit temporibus! Animi aperiam consequuntur dolores earum quasi repudiandae sequi, suscipit voluptatem! Assumenda labore nisi sit!</p>
+      <slot />
 
       <button>Hide modal</button>
     </div>
@@ -11,7 +13,10 @@
 </template>
 
 <script setup>
+import { useSlots } from 'vue';
 
+const slots = useSlots();
+console.log(slots.title());
 </script>
 
 <style>
